@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/video/KlegoVideo.mp4"
   },
   {
-    "revision": "7c9466822e4fbc42454c",
-    "url": "/css/app.6ddb2ea8.css"
+    "revision": "c83133fb28a39ffa9fbe",
+    "url": "/css/app.09f3290f.css"
   },
   {
     "revision": "77f8dc165f5d30fbd4e7",
@@ -44,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/struktur.png"
   },
   {
-    "revision": "805a6e41ca54265a08f20af2dec8c6a8",
+    "revision": "cd8f6f95f71cb01d22f1d423d3994c87",
     "url": "/index.html"
   },
   {
-    "revision": "7c9466822e4fbc42454c",
-    "url": "/js/app.c82768d0.js"
+    "revision": "c83133fb28a39ffa9fbe",
+    "url": "/js/app.3e50cd45.js"
   },
   {
     "revision": "77f8dc165f5d30fbd4e7",
