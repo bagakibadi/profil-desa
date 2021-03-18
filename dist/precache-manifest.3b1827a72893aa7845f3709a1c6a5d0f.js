@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assets/video/KlegoVideo.mp4"
   },
   {
-    "revision": "397c39299f23d387c017",
+    "revision": "7c9466822e4fbc42454c",
     "url": "/css/app.6ddb2ea8.css"
   },
   {
@@ -37,10 +37,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "b6bc3a21d33f88f9d8bf2f0c55925baf",
-    "url": "/img/klego.png"
-  },
-  {
-    "revision": "8a4e1a484fe57016c017cd994154fba8",
     "url": "/img/logo.png"
   },
   {
@@ -48,20 +44,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/struktur.png"
   },
   {
-    "revision": "b39f5249b9504fb1692277bd174dfefa",
+    "revision": "805a6e41ca54265a08f20af2dec8c6a8",
     "url": "/index.html"
   },
   {
-    "revision": "397c39299f23d387c017",
-    "url": "/js/app.aa6483d7.js"
+    "revision": "7c9466822e4fbc42454c",
+    "url": "/js/app.c82768d0.js"
   },
   {
     "revision": "77f8dc165f5d30fbd4e7",
     "url": "/js/chunk-vendors.175ffbb6.js"
   },
   {
-    "revision": "b0a90ebe27e25bd67d2a34f26771a3ee",
-    "url": "/logo.ico"
+    "revision": "5258c2d2ee0d581ef7b14b06be254547",
+    "url": "/klego.ico"
   },
   {
     "revision": "bd0b0959c86fdac6da2ed856997e0c85",

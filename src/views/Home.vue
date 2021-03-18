@@ -14,7 +14,7 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img src="/img/klego.png" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img src="/img/logo.png" class="img-fluid rounded-circle" alt="Cinque Terre">
                     </div>
                   </div>
                   <div class="col-md-8" >
@@ -92,12 +92,12 @@
         </div>
         <div class="project-section" style="overflow: hidden" id="berita">
           <div class="container">
-            <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
+            <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800"><span>
                 Berita
               </span>
             </h1>
             <div class="row">
-              <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="300" data-aos-duration="800">
+              <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="800">
                 <div class="cards">
                   <div class="penampungimg">
                     <a target="new" href="#">
