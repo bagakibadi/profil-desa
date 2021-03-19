@@ -28,7 +28,7 @@
                <div class="col-md-6">
                   <div class="box-right">
                      <a href="/">
-                        <img src="/img/klego.png" class="w-100 h-100" alt="">
+                        <img src="/img/klego.PNG" class="w-100 h-100" alt="">
                      </a>
                   </div>
                </div>
