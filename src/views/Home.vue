@@ -14,7 +14,7 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img src="/boyolali.png" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img src="/img/klego.PNG" class="img-fluid rounded-circle" alt="Cinque Terre">
                     </div>
                   </div>
                   <div class="col-md-8" >
@@ -64,7 +64,7 @@
                 <p class="indent" style="text-align: justify;">
                   Misi merupakan pernyataan tentang apa yang harus dilaksanakan dalam upaya mencapai visi. Misi merupakan turunan dari pokok-pokok visi yang telah diidentifikasi sebelumnya.
                 </p>
-                <ol>
+                <ol class="pl-5">
                   <li>Melakukan pelayanan masyarakat yang baik (good governance) transparan dan akuntabilitas.</li>
                   <li>Peningkatan sarpra, tempat pengajuan anak (TPA), masjid, musholla, dan toleransi beragama.</li>
                   <li>Melakukan inovasi dalam pengelolaan tanah pertanian dengan menggunakan alat modern sehingga efisien dan berkualitas.</li>
@@ -96,7 +96,7 @@
                 Berita
               </span>
             </h1>
-            <div class="row">
+            <div class="row m-0">
               <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="800">
                 <div class="cards">
                   <div class="penampungimg">
@@ -231,7 +231,7 @@ export default {
     border-radius: 10px;
     height:420px;
     width: 100%;
-    margin:20px 10px;
+    margin:20px 0px;
     background: white;
   }
   .penampungimg{
