@@ -14,7 +14,7 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img src="/img/logo.png" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img src="/boyolali.png" class="img-fluid rounded-circle" alt="Cinque Terre">
                     </div>
                   </div>
                   <div class="col-md-8" >
@@ -101,7 +101,7 @@
                 <div class="cards">
                   <div class="penampungimg">
                     <a target="new" href="#">
-                      <img src="https://mice.id/warehouse/assets/news/news_images_1609425816.jpg" class="imgcontent">
+                      <img src="/img/news.jpg" class="imgcontent">
                     </a>
                   </div>
                   <div class="dalemcards">
@@ -109,22 +109,22 @@
                       <h1 id="juduld" class="juduldalam">Destinasi</h1>
                     </a>
                     <p class="text-muted tanggal">2020-12-31 14:43:36</p>
-                    <p class="sinopsiscard">Bali: Surga Lokasi Penyelenggaraan Event MICE</p>
+                    <p class="sinopsiscard">Berita Terkini</p>
                     <hr>
                     <div style="display: flex;">
                       <div class="icons">
                         <a onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=', '', 'width=400, height=500')" target="_blank">
-                          <div class="imgfb" title="Facebook Kemenparekraf">
+                          <div class="imgfb" title="">
                             <i class="fab fa-facebook-f"></i>
                           </div>
                         </a>
                         <a href="https://twitter.com/intent/tweet?text=" target="_blank">
-                          <div class="imgtwit" title="Twitter Kemenparekraf">
+                          <div class="imgtwit" title="">
                             <i class="fab fa-twitter"></i>
                           </div>
                         </a>
                         <a data-container="body" data-toggle="popover" data-placement="top" data-content="URL Copied">
-                          <div class="imgcop" title="Youtube Kemenparekraf">
+                          <div class="imgcop" title="">
                             <i class="fa fa-link example-popover"></i>
                           </div>
                         </a>
@@ -164,48 +164,10 @@ export default {
     return {
       berita: [
         {
-          id: 1,
-          nama: 'asu'
+          id: 1
         },
         {
-          id: 2,
-          nama: 'asu'
-        },
-        {
-          id: 3,
-          nama: 'asu'
-        },
-        {
-          id: 4,
-          nama: 'asu'
-        },
-        {
-          id: 5,
-          nama: 'asu'
-        },
-        {
-          id: 6,
-          nama: 'asu'
-        },
-        {
-          id: 7,
-          nama: 'asu'
-        },
-        {
-          id: 8,
-          nama: 'asu'
-        },
-        {
-          id: 9,
-          nama: 'asu'
-        },
-        {
-          id: 10,
-          nama: 'asu'
-        },
-        {
-          id: 11,
-          nama: 'asu'
+          id: 2
         }
       ],
       pageOfItems: []
@@ -213,7 +175,6 @@ export default {
   },
   methods: {
     onChangePage (pageOfItems) {
-      console.log(pageOfItems)
       // update page of items
       this.pageOfItems = pageOfItems
     }
