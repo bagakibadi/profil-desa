@@ -2,13 +2,13 @@
     <div id="home">
       <div class="intro-section">
         <div class="overlay-bg"></div>
-        <div style="width: 100%">
+        <div style="width: 100%" >
           <video autoplay muted loop id="myVideo" width="100%">
-            <source src="/assets/video/KlegoVideo.mp4" type="video/mp4">
+            <source :src="profile.header" type="video/mp4" v-if="profile.header">
           </video>
         </div>
         <div class="text-intro">
-          <h1 class="text1">Smart Klego</h1>
+          <h1 class="text1">{{profile.slogan}}</h1>
           <h1 class="text2">#MajuBersamaDesa</h1>
         </div>
       </div>
@@ -16,8 +16,10 @@
 </template>
 
 <script>
+
 export default {
-  name: 'Header'
+  name: 'Header',
+  props: ['profile']
 }
 </script>
 

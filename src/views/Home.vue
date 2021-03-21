@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Navbar/>
-        <Header/>
+        <Navbar v-bind:profile="profile"/>
+        <Header v-bind:profile="profile"/>
 
         <div class="action-section bg-white" id="profildesa" style="overflow: hidden">
           <div class="container">
@@ -14,12 +14,12 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img src="/img/klego.PNG" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img :src="profile.logo" class="img-fluid rounded-circle" alt="Cinque Terre">
                     </div>
                   </div>
                   <div class="col-md-8" >
-                    <h3 class="text-green font-weight-bold">Desa Klego</h3>
-                    <p>Jl. Raya Karanggede – Gemolong Km. 07, Desa Klego Kec. Klego, Kab. Boyolali, Kodepos 57385</p>
+                    <h3 class="text-green font-weight-bold">{{profile.nama}}</h3>
+                    <p>{{profile.alamat}}</p>
                   </div>
                 </div>
               </div>
@@ -27,12 +27,12 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img src="/img/PakGuntur.jpeg" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img :src="profile.foto_kades" class="img-fluid rounded-circle" alt="Cinque Terre">
                     </div>
                   </div>
                   <div class="col-md-8">
-                    <h3 class="text-green font-weight-bold">GUNTUR HS, S.Pd</h3>
-                    <p>Kepala Desa Klego</p>
+                    <h3 class="text-green font-weight-bold">{{profile.nama_kades}}</h3>
+                    <p>{{profile.jabatan}}</p>
                   </div>
                 </div>
               </div>
@@ -49,9 +49,7 @@
             <div class="row visi justify-content-center mt-5">
               <div class="col-md-12 align-items-center">
                 <h3 class="text-green font-weight-bold" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">VISI</h3>
-                <p class="indent" style="text-align: justify" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">
-                  Visi pembangunan dalam RPJM Desa Tahun 2019-2025 merupakan visi Kepala Desa yang disampaikan pada saat proses pemilihan Kepala Desa. Visi yang telah ditetapkan oleh Kepala Desa terpilih tersebut adalah sebagai berikut : <br> <b style="font-style: italic;">"Mewujudkan Pemerintahan Desa Klego yang Berbudaya dan Mandiri".</b>
-                </p>
+                <div v-html="profile.visi" class="visi" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800"></div>
               </div>
             </div>
           </div>
@@ -61,7 +59,7 @@
             <div class="row misi justify-content-center mt-4">
               <div class="col-md-12 align-items-center" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
                 <h3 class="text-green font-weight-bold">Misi</h3>
-                <p class="indent" style="text-align: justify;">
+                <!-- <p class="indent" style="text-align: justify;">
                   Misi merupakan pernyataan tentang apa yang harus dilaksanakan dalam upaya mencapai visi. Misi merupakan turunan dari pokok-pokok visi yang telah diidentifikasi sebelumnya.
                 </p>
                 <ol class="pl-5">
@@ -72,7 +70,8 @@
                   <li>Pembuatan program agropreneur yang merupakan sinkronisasi antara pertanian dan program desa wisata sehingga mampu mensejetarahkan masyarakat.</li>
                   <li>Pembuatan program peningkatan sarpras olahraga dengan pembuatan stadion mini sehingga bisa digunakan untuk sarana olahraga dan juga untuk edukasi atau Pendidikan keolahragaan.</li>
                   <li>Melanjutkan pembangunan infrastruktur jalan desa d seluruh Desa Klego.</li>
-                </ol>
+                </ol> -->
+                <div class="misi" v-html="profile.misi"></div>
               </div>
             </div>
           </div>
@@ -85,7 +84,7 @@
             </h1>
             <div class="row">
               <div class="col-md-12">
-                <img src="/img/struktur.png" class="img-struktur" alt="" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                <img :src="profile.struktur" class="img-struktur" alt="" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
               </div>
             </div>
           </div>
@@ -101,58 +100,62 @@
                 <div class="cards">
                   <div class="penampungimg">
                     <a target="new" href="#">
-                      <img src="/img/news.jpg" class="imgcontent">
+                      <img :src="item.featured_image" class="imgcontent">
                     </a>
                   </div>
                   <div class="dalemcards">
                     <a href="#">
-                      <h1 id="juduld" class="juduldalam">Destinasi</h1>
+                      <h1 id="juduld" class="juduldalam">{{item.judul}}</h1>
                     </a>
-                    <p class="text-muted tanggal">2020-12-31 14:43:36</p>
-                    <p class="sinopsiscard">Berita Terkini</p>
+                    <p class="text-muted tanggal">{{item.created_at}}</p>
+                    <p class="sinopsiscard" v-html="item.isi_berita"></p>
                     <hr>
                     <div style="display: flex;">
                       <div class="icons">
-                        <a onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=', '', 'width=400, height=500')" target="_blank">
+                        <a @click="facebook(item.id)" target="_blank">
                           <div class="imgfb" title="">
                             <i class="fab fa-facebook-f"></i>
                           </div>
                         </a>
-                        <a href="https://twitter.com/intent/tweet?text=" target="_blank">
+                        <a @click="twitter(item.id)" target="_blank">
                           <div class="imgtwit" title="">
                             <i class="fab fa-twitter"></i>
                           </div>
                         </a>
-                        <a data-container="body" data-toggle="popover" data-placement="top" data-content="URL Copied">
+                        <a @click="copy(item.id)" id="copy" data-container="body" data-toggle="popover" data-placement="top" data-content="URL Copied">
                           <div class="imgcop" title="">
                             <i class="fa fa-link example-popover"></i>
                           </div>
                         </a>
-                        <!-- <a href="https://www.instagram.com/Mice_indonesia/" target="_blank">
-                          <div class="imgsoc" title="Instagram Mice Indonesia"></div>
-                        </a> -->
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class=" col-md-12 pb-0 py-3 row justify-content-center">
-                <jw-pagination :items="berita" pageSize="6" @changePage="onChangePage"></jw-pagination>
+                <jw-pagination :items="berita" :pageSize=6 @changePage="onChangePage"></jw-pagination>
               </div>
             </div>
           </div>
         </div>
         <!-- <Cta/> -->
-        <Footer/>
+        <Footer :profile="profile"/>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Navbar from '@/components/Navbar.vue'
 import Header from '../components/Header.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
+  props: {
+    pageSize: {
+      type: Number,
+      default: 1
+    }
+  },
   name: 'Home',
   components: {
     Navbar,
@@ -162,27 +165,63 @@ export default {
   },
   data () {
     return {
-      berita: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        }
-      ],
       pageOfItems: []
     }
   },
   methods: {
+    facebook (a) {
+      window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href + a, '', 'width=400, height=500')
+    },
+    twitter (a) {
+      window.open('https://twitter.com/intent/tweet?text=' + window.location.href + a, '', 'width=400, height=500')
+    },
+    copy (e) {
+      const copy = document.createElement('input')
+      copy.setAttribute('value', window.location.href + e)
+      document.body.appendChild(copy)
+      copy.select()
+      document.execCommand('copy')
+      document.body.removeChild(copy)
+      const copys = document.getElementById('copy')
+      copys.setAttribute('title', 'Copy')
+    },
     onChangePage (pageOfItems) {
       // update page of items
       this.pageOfItems = pageOfItems
     }
+  },
+  computed: {
+    ...mapState(['profile']),
+    ...mapState(['berita'])
+  },
+  beforeCreate () {
+    this.$store.dispatch('getApi', {
+      url: 'profile',
+      mutation: 'GET_PROFILE'
+    })
+    this.$store.dispatch('getApi', {
+      url: 'berita',
+      mutation: 'GET_BERITA'
+    })
   }
 }
 </script>
 
 <style>
+  .visi p {
+    text-align: justify;
+    text-indent: 45px;
+  }
+  .misi p {
+    text-align: justify;
+    text-indent: 45px;
+  }
+  .misi ol, .misi ul {
+    padding: 0 0 0 50px;
+  }
+  .imgfb{
+    cursor: pointer;
+  }
   .imgfb i{
     color: #3C5A99;
     margin: 0 5px;
@@ -195,6 +234,9 @@ export default {
     align-items: center;
     justify-content: center;
   }
+  .imgtwit {
+    cursor: pointer;
+  }
   .imgtwit i{
     color: #1da1f2;
     margin: 0 5px;
@@ -206,6 +248,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .imgcop {
+    cursor: pointer;
   }
   .imgcop i{
     color: rgb(85, 85, 85);

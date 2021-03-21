@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-white" id="nav">
       <a class="navbar-brand" href="#" data-aos="zoom-in">
-        <img class="img-logo" id="logo-img" src="/img/klego.PNG" alt="PrimaVillage">
+        <img class="img-logo" id="logo-img" :src="profile.logo" alt="PrimaVillage">
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -31,13 +31,14 @@
           </li>
         </ul>
       </div>
-      <a data-v-af38669a="" href="/masuk" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-none d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
+      <a data-v-af38669a="" href="https://adminklego.primavillage.id/" target="_blank" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-none d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
     </nav>
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  props: ['profile']
 }
 </script>
 

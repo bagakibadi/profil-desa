@@ -9,8 +9,8 @@ module.exports = {
   ],
   parserOptions: {
     parser: 'babel-eslint',
-    "rules":{
-      "no-tabs": 0
+    rules: {
+      'no-tabs': 0
     }
   },
   rules: {
