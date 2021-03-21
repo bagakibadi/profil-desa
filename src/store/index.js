@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     profile: [],
-    berita: []
+    berita: [],
+    detailberita: []
   },
   mutations: {
     GET_PROFILE (state, data) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     GET_BERITA (state, data) {
       state.berita = data
+    },
+    GET_D_BERITA (state, data) {
+      state.detailberita = data
     }
   },
   actions: {

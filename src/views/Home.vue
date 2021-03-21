@@ -99,12 +99,12 @@
               <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="800">
                 <div class="cards">
                   <div class="penampungimg">
-                    <a target="new" href="#">
+                    <a target="new" :href="'berita/' + item.id">
                       <img :src="item.featured_image" class="imgcontent">
                     </a>
                   </div>
                   <div class="dalemcards">
-                    <a href="#">
+                    <a :href="'berita/'+ item.id" target="new">
                       <h1 id="juduld" class="juduldalam">{{item.judul}}</h1>
                     </a>
                     <p class="text-muted tanggal">{{item.created_at}}</p>
@@ -205,10 +205,6 @@ export default {
       url: 'berita',
       mutation: 'GET_BERITA'
     })
-    setTimeout(() => {
-      const favicon = document.getElementById('favicon')
-      favicon.href = this.profile.logo
-    }, 500)
   }
 }
 </script>
