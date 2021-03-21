@@ -14,7 +14,7 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img :src="profile.logo" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img @click="test" :src="profile.logo" class="img-fluid rounded-circle" alt="Logo">
                     </div>
                   </div>
                   <div class="col-md-8" >
@@ -27,7 +27,7 @@
                 <div class="row justify-content-between">
                   <div class="col-md-4 img-profile">
                     <div class="d-flex justify-content-center">
-                      <img :src="profile.foto_kades" class="img-fluid rounded-circle" alt="Cinque Terre">
+                      <img :src="profile.foto_kades" class="img-fluid rounded-circle" alt="Profile">
                     </div>
                   </div>
                   <div class="col-md-8">
@@ -175,6 +175,8 @@ export default {
     twitter (a) {
       window.open('https://twitter.com/intent/tweet?text=' + window.location.href + a, '', 'width=400, height=500')
     },
+    test () {
+    },
     copy (e) {
       const copy = document.createElement('input')
       copy.setAttribute('value', window.location.href + e)
@@ -203,6 +205,10 @@ export default {
       url: 'berita',
       mutation: 'GET_BERITA'
     })
+    setTimeout(() => {
+      const favicon = document.getElementById('favicon')
+      favicon.href = this.profile.logo
+    }, 500)
   }
 }
 </script>
