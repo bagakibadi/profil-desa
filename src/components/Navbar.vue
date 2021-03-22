@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light bg-white" id="nav">
-      <a class="navbar-brand" href="#" data-aos="zoom-in">
+      <a class="navbar-brand" href="/" data-aos="zoom-in">
         <img class="img-logo" id="logo-img" :src="profile.logo" alt="PrimaVillage">
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">

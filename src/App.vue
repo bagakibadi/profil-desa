@@ -33,4 +33,10 @@
 #visimisi p, #visimisi ol li{
   color: rgb(7, 104, 37);
 }
+#visimisi p {
+  text-indent: 45px;
+}
+#visimisi ol {
+  padding: 0 0 0 50px;
+}
 </style>

@@ -205,6 +205,13 @@ export default {
       url: 'berita',
       mutation: 'GET_BERITA'
     })
+    window.document.title = 'Profile Desa ' + window.location.host.split('.')[0]
+    setTimeout(() => {
+      document.getElementById('title-meta').content = 'Profile Desa ' + this.profile.nama
+      document.getElementById('logo-meta').content = this.profile.logo
+      console.log(document.getElementById('logo-meta'))
+      console.log(document.getElementById('title-meta'))
+    }, 500)
   }
 }
 </script>
