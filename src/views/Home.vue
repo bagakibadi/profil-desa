@@ -209,7 +209,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .visi p {
     text-align: justify;
     text-indent: 45px;
