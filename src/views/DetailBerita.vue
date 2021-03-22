@@ -18,7 +18,7 @@
                                 <h3 class="text-green font-weight-bold">{{detailberita[0].judul}}</h3>
                             </div>
                             <div class="d-flex justify-content-start my-2">
-                                <p>by {{detailberita[0].author.name}} | {{detailberita[0].created_at}} </p>
+                                <p>by {{detailberita[0].author.name}} | {{detailberita[0].dibuat}} </p>
                             </div>
                             <div class="d-flex justify-content-start my-2">
                                 <!-- <facebook-button v-bind:isBlank="false" btnText/>

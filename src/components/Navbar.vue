@@ -26,12 +26,12 @@
             </a>
           </li>
           <li class="nav-item" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
-            <a class="js-scroll-trigger mr-3" href="http://bumdes.primakom.co.id/klego" target="_blank" data-translatable="" data-dom-i18n-id="i18n161525634233560.02850891091693">Portal
+            <a class="js-scroll-trigger mr-3" :href="profile.link_portal" target="_blank" data-translatable="" data-dom-i18n-id="i18n161525634233560.02850891091693">Portal
             </a>
           </li>
         </ul>
       </div>
-      <a data-v-af38669a="" href="https://adminklego.primavillage.id/" target="_blank" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-none d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
+      <a data-v-af38669a="" :href="profile.admin" target="_blank" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-none d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
     </nav>
 </template>
 

@@ -2,14 +2,14 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <meta property="og:title" id="title-meta" content="" />
+    <meta property="og:title" id="title-meta" content="Prima Village" />
     <meta property="og:type" content="website" />
     <!-- <meta name="title" id="title-meta" content="Prima village"> -->
     <meta name="keywords" content="Desa, Primakom, Prima Village">
     <meta name="description" content="Aplikasi yang diciptakan untuk memudahkan masyarakat untuk menunjang ekonomi dan kemandirian desa sehingga menjadi desa yang berdaya.">
     <meta property="og:description" content="Aplikasi yang diciptakan untuk memudahkan masyarakat untuk menunjang ekonomi dan kemandirian desa sehingga menjadi desa yang berdaya." />
     <meta property="og:url" content="https://primavillage.id" />
-    <meta property="og:image" id="logo-meta" content="" />
+    <meta property="og:image" id="logo-meta" content="https://primavillage.id/img/logo.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" id="favicon" href="">
@@ -50,26 +50,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqjtleFQGb3-KqRsq-Peg1NsatgWwgmlw&callback=initMap&libraries=&v=weekly" async></script>
-    <script>
-      $(document).ready(function () {
-        // console.log(window.location.host.split('.')[0])
-        $.ajax({
-          type: 'GET',
-          url: 'https://adminklego.primavillage.id/api/profile',
-          cache: false,
-          // url: 'admin' + window.location.host.split('.')[0] + '.primavillage.id/api/profile',
-          success: function(res) {
-            console.log(res[0])
-            document.getElementById('title-meta').content = 'Profile Desa ' + res[0].nama
-            document.getElementById('logo-meta').content = res[0].logo
-          },
-          error: function(err) {
-            console.log(err)
-          }
-        })
-        document.getElementById('logo-meta').content = profile.desa
-      })
-    </script>
     <script>
       const img = document.getElementById('logo-img');
       window.onscroll = () => {

@@ -32,7 +32,8 @@
                   </div>
                   <div class="col-md-8">
                     <h3 class="text-green font-weight-bold">{{profile.nama_kades}}</h3>
-                    <p>{{profile.jabatan}}</p>
+                    <p class="m-0">{{profile.jabatan}}</p>
+                    <p>{{profile.masa_jabatan}}</p>
                   </div>
                 </div>
               </div>
@@ -107,7 +108,7 @@
                     <a :href="'berita/'+ item.id" target="new">
                       <h1 id="juduld" class="juduldalam">{{item.judul}}</h1>
                     </a>
-                    <p class="text-muted tanggal">{{item.created_at}}</p>
+                    <p class="text-muted tanggal">{{item.dibuat}}</p>
                     <p class="sinopsiscard" v-html="item.isi_berita"></p>
                     <hr>
                     <div style="display: flex;">
@@ -205,13 +206,9 @@ export default {
       url: 'berita',
       mutation: 'GET_BERITA'
     })
-    window.document.title = 'Profile Desa ' + window.location.host.split('.')[0]
-    setTimeout(() => {
-      document.getElementById('title-meta').content = 'Profile Desa ' + this.profile.nama
-      document.getElementById('logo-meta').content = this.profile.logo
-      console.log(document.getElementById('logo-meta'))
-      console.log(document.getElementById('title-meta'))
-    }, 500)
+  },
+  metaInfo: {
+    title: 'Profile Desa ' + window.location.host.split('.')[0]
   }
 }
 </script>
