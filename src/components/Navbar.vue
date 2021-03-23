@@ -31,7 +31,7 @@
           </li>
         </ul>
       </div>
-      <a data-v-af38669a="" :href="profile.admin" target="_blank" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-none d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
+      <a data-v-af38669a="" :href="profile.admin" target="_blank" data-translatable="" data-aos="zoom-in" class="btn btn-nav btn-jejakin-white my-2 my-sm-0 d-sm-inline aos-init aos-animate"><span data-v-af38669a=""> Masuk <i data-v-af38669a="" class="fas fa-arrow-right"></i></span></a>
     </nav>
 </template>
 

@@ -2,139 +2,130 @@
     <div>
         <Navbar v-bind:profile="profile"/>
         <Header v-bind:profile="profile"/>
-
-        <div class="action-section bg-white" id="profildesa" style="overflow: hidden">
-          <div class="container">
-            <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
-                Profil Desa
-              </span>
-            </h1>
-            <div class="row justify-content-center">
-              <div class="col-md-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
-                <div class="row justify-content-between">
-                  <div class="col-md-4 img-profile">
-                    <div class="d-flex justify-content-center">
-                      <img @click="test" :src="profile.logo" class="img-fluid rounded-circle" alt="Logo">
+        <div id="countsection">
+          <div class="action-section " id="profildesa" style="overflow: hidden" >
+            <div class="container">
+              <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
+                  Profil Desa
+                </span>
+              </h1>
+              <div class="row justify-content-center">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="300" data-aos-duration="800">
+                  <div class="row justify-content-between" >
+                    <div class="col-md-4 img-profile">
+                      <div class="d-flex justify-content-center">
+                        <img src="#" style="overflow: hidden" v-if="!profile.logo" class="img-fluid rounded-circle" alt="">
+                        <img @click="test" :src="profile.logo" v-else class="img-fluid rounded-circle" alt="Logo">
+                      </div>
+                    </div>
+                    <div class="col-md-8" >
+                      <h3 class="text-green font-weight-bold">{{profile.nama}}</h3>
+                      <p v-if="profile.alamat">{{profile.alamat}}</p>
                     </div>
                   </div>
-                  <div class="col-md-8" >
-                    <h3 class="text-green font-weight-bold">{{profile.nama}}</h3>
-                    <p>{{profile.alamat}}</p>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+                  <div class="row justify-content-between">
+                    <div class="col-md-4 img-profile">
+                      <div class="d-flex justify-content-center">
+                        <img src="#" style="overflow: hidden" v-if="!profile.foto_kades" class="img-fluid rounded-circle" alt="">
+                        <img :src="profile.foto_kades" v-else class="img-fluid rounded-circle" alt="Profile">
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <h3 class="text-green font-weight-bold">{{profile.nama_kades}}</h3>
+                      <p class="m-0">{{profile.jabatan}}</p>
+                      <p>{{profile.masa_jabatan}}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
-                <div class="row justify-content-between">
-                  <div class="col-md-4 img-profile">
-                    <div class="d-flex justify-content-center">
-                      <img :src="profile.foto_kades" class="img-fluid rounded-circle" alt="Profile">
-                    </div>
-                  </div>
-                  <div class="col-md-8">
-                    <h3 class="text-green font-weight-bold">{{profile.nama_kades}}</h3>
-                    <p class="m-0">{{profile.jabatan}}</p>
-                    <p>{{profile.masa_jabatan}}</p>
-                  </div>
+            </div>
+          </div>
+          <div class="action-section" id="visimisi" style="overflow: hidden;" v-if="profile.visi || profile.misi">
+            <div class="container">
+              <h1 class="font-weight-bold text-center" style="color: #076825 !important" data-translatable="" data-dom-i18n-id="i18n1615256342335539.6009804439918" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
+                  Visi Misi Desa
+                </span>
+              </h1>
+
+              <div class="row visi justify-content-center mt-5" v-if="profile.visi">
+                <div class="col-md-12 align-items-center">
+                  <h3 class="text-green font-weight-bold" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">VISI</h3>
+                  <div v-html="profile.visi" class="visi" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container mt-5" v-if="profile.misi">
+
+              <div class="row misi justify-content-center mt-4">
+                <div class="col-md-12 align-items-center" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+                  <h3 class="text-green font-weight-bold">Misi</h3>
+                  <div class="misi" v-html="profile.misi"></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="project-section" id="visimisi" style="overflow: hidden;">
-          <div class="container">
-            <h1 class="font-weight-bold text-center" style="color: #076825 !important" data-translatable="" data-dom-i18n-id="i18n1615256342335539.6009804439918" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
-                Visi Misi Desa
-              </span>
-            </h1>
-
-            <div class="row visi justify-content-center mt-5">
-              <div class="col-md-12 align-items-center">
-                <h3 class="text-green font-weight-bold" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800">VISI</h3>
-                <div v-html="profile.visi" class="visi" data-aos="fade-right" data-aos-delay="200" data-aos-duration="800"></div>
+          <div class="action-section " style="overflow: hidden" id="struktur" v-if="profile.struktur">
+            <div class="container">
+              <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
+                  Struktur Organisasi
+                </span>
+              </h1>
+              <div class="row">
+                <div class="col-md-12">
+                  <img :src="profile.struktur" class="img-struktur" alt="" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="container mt-5" >
-
-            <div class="row misi justify-content-center mt-4">
-              <div class="col-md-12 align-items-center" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
-                <h3 class="text-green font-weight-bold">Misi</h3>
-                <!-- <p class="indent" style="text-align: justify;">
-                  Misi merupakan pernyataan tentang apa yang harus dilaksanakan dalam upaya mencapai visi. Misi merupakan turunan dari pokok-pokok visi yang telah diidentifikasi sebelumnya.
-                </p>
-                <ol class="pl-5">
-                  <li>Melakukan pelayanan masyarakat yang baik (good governance) transparan dan akuntabilitas.</li>
-                  <li>Peningkatan sarpra, tempat pengajuan anak (TPA), masjid, musholla, dan toleransi beragama.</li>
-                  <li>Melakukan inovasi dalam pengelolaan tanah pertanian dengan menggunakan alat modern sehingga efisien dan berkualitas.</li>
-                  <li>Peningkatan sumber daya manusia seni dan budaya serta melestarikan adat budaya yang baik.</li>
-                  <li>Pembuatan program agropreneur yang merupakan sinkronisasi antara pertanian dan program desa wisata sehingga mampu mensejetarahkan masyarakat.</li>
-                  <li>Pembuatan program peningkatan sarpras olahraga dengan pembuatan stadion mini sehingga bisa digunakan untuk sarana olahraga dan juga untuk edukasi atau Pendidikan keolahragaan.</li>
-                  <li>Melanjutkan pembangunan infrastruktur jalan desa d seluruh Desa Klego.</li>
-                </ol> -->
-                <div class="misi" v-html="profile.misi"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="action-section bg-white" style="overflow: hidden" id="struktur">
-          <div class="container">
-            <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800"><span>
-                Struktur Organisasi
-              </span>
-            </h1>
-            <div class="row">
-              <div class="col-md-12">
-                <img :src="profile.struktur" class="img-struktur" alt="" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-section" style="overflow: hidden" id="berita">
-          <div class="container">
-            <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800"><span>
-                Berita
-              </span>
-            </h1>
-            <div class="row m-0">
-              <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="800">
-                <div class="cards">
-                  <div class="penampungimg">
-                    <a target="new" :href="'berita/' + item.id">
-                      <img :src="item.featured_image" class="imgcontent">
-                    </a>
-                  </div>
-                  <div class="dalemcards">
-                    <a :href="'berita/'+ item.id" target="new">
-                      <h1 id="juduld" class="juduldalam">{{item.judul}}</h1>
-                    </a>
-                    <p class="text-muted tanggal">{{item.dibuat}}</p>
-                    <p class="sinopsiscard" v-html="item.isi_berita"></p>
-                    <hr>
-                    <div style="display: flex;">
-                      <div class="icons">
-                        <a @click="facebook(item.id)" target="_blank">
-                          <div class="imgfb" title="">
-                            <i class="fab fa-facebook-f"></i>
-                          </div>
-                        </a>
-                        <a @click="twitter(item.id)" target="_blank">
-                          <div class="imgtwit" title="">
-                            <i class="fab fa-twitter"></i>
-                          </div>
-                        </a>
-                        <a @click="copy(item.id)" id="copy" data-container="body" data-toggle="popover" data-placement="top" data-content="URL Copied">
-                          <div class="imgcop" title="">
-                            <i class="fa fa-link example-popover"></i>
-                          </div>
-                        </a>
+          <div class="action-section" style="overflow: hidden" id="berita" v-if="berita.length !== 0">
+            <div class="container">
+              <h1 class="font-weight-bold text-center mb-5" style="color: #076825 !important" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800"><span>
+                  Berita
+                </span>
+              </h1>
+              <div class="row m-0">
+                <div class="col-md-4" v-for="item in pageOfItems" :key="item.id" data-aos="fade-up-right" data-aos-delay="500" data-aos-duration="800">
+                  <div class="cards">
+                    <div class="penampungimg">
+                      <a target="new" :href="'berita/' + item.id">
+                        <img :src="item.featured_image" class="imgcontent">
+                      </a>
+                    </div>
+                    <div class="dalemcards">
+                      <a :href="'berita/'+ item.id" target="new">
+                        <h1 id="juduld" class="juduldalam">{{item.judul}}</h1>
+                      </a>
+                      <p class="text-muted tanggal">{{item.dibuat}}</p>
+                      <p class="sinopsiscard" v-html="item.isi_berita"></p>
+                      <hr>
+                      <div style="display: flex;">
+                        <div class="icons">
+                          <a @click="facebook(item.id)" target="_blank">
+                            <div class="imgfb" title="">
+                              <i class="fab fa-facebook-f"></i>
+                            </div>
+                          </a>
+                          <a @click="twitter(item.id)" target="_blank">
+                            <div class="imgtwit" title="">
+                              <i class="fab fa-twitter"></i>
+                            </div>
+                          </a>
+                          <a @click="copy(item.id)" id="copy" data-container="body" data-toggle="popover" data-placement="top" data-content="URL Copied">
+                            <div class="imgcop" title="">
+                              <i class="fa fa-link example-popover"></i>
+                            </div>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class=" col-md-12 pb-0 py-3 row justify-content-center">
-                <jw-pagination :items="berita" :pageSize=6 @changePage="onChangePage"></jw-pagination>
+                <div class=" col-md-12 pb-0 py-3 row justify-content-center">
+                  <jw-pagination :items="berita" :pageSize=6 @changePage="onChangePage"></jw-pagination>
+                </div>
               </div>
             </div>
           </div>
@@ -196,6 +187,19 @@ export default {
   computed: {
     ...mapState(['profile']),
     ...mapState(['berita'])
+  },
+  created () {
+    setTimeout(() => {
+      const div = document.getElementById('countsection')
+      const mod = div.getElementsByClassName('action-section')
+      for (var i = 0; i < mod.length; i++) {
+        if (i % 2) {
+          mod[i].style.backgroundColor = 'rgb(241, 246, 246)'
+        } else {
+          mod[i].style.backgroundColor = '#FFFFFF'
+        }
+      }
+    }, 500)
   },
   beforeCreate () {
     this.$store.dispatch('getApi', {
