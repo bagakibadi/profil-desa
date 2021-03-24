@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar v-bind:profile="profile"/>
+        <Navbar v-bind:profile="profile" :berita="berita"/>
         <Header v-bind:profile="profile"/>
         <div id="countsection">
           <div class="action-section " id="profildesa" style="overflow: hidden" >

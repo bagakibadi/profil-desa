@@ -17,11 +17,11 @@
             <a class="js-scroll-trigger mr-3" href="#visimisi" data-translatable="" data-dom-i18n-id="i18n161525634233560.02850891091693">Visi Misi
             </a>
           </li>
-          <li class="nav-item" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
+          <li v-if="profile.struktur" class="nav-item" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
             <a class="js-scroll-trigger mr-3" href="#struktur" data-translatable="" data-dom-i18n-id="i18n161525634233560.02850891091693">Struktur
             </a>
           </li>
-          <li class="nav-item" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
+          <li v-if="berita.length !== 0" class="nav-item" data-aos="fade-left" data-aos-delay="600" data-aos-duration="800">
             <a class="js-scroll-trigger mr-3" href="#berita" data-translatable="" data-dom-i18n-id="i18n161525634233560.02850891091693">Berita
             </a>
           </li>
@@ -38,7 +38,7 @@
 <script>
 export default {
   name: 'Navbar',
-  props: ['profile'],
+  props: ['profile', 'berita'],
   beforeCreate () {
     setTimeout(() => {
       const favicon = document.getElementById('favicon')
