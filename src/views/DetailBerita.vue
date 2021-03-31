@@ -1,6 +1,6 @@
 <template>
   <div style="padding-top: 80px">
-        <Navbar :profile="profile"/>
+        <Navbar :profile="profile" :berita="berita"/>
     <div class="container my-4" v-if="detailberita[0]">
         <div class="card shadow">
             <div class="card-body">
@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-        <Footer :profile="profile"/>
+        <Footer :profile="profile" />
     </div>
 </template>
 

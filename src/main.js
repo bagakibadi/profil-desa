@@ -7,6 +7,11 @@ import VueMeta from 'vue-meta'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import JwPagination from 'jw-vue-pagination'
+// import './registerServiceWorker'
+import wb from './registerServiceWorker'
+
+Vue.prototype.$workbox = wb
+Vue.config.productionTip = false
 
 Vue.use(VueMeta, {
   // optional pluginOptions

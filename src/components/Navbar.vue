@@ -38,13 +38,7 @@
 <script>
 export default {
   name: 'Navbar',
-  props: ['profile', 'berita'],
-  beforeCreate () {
-    setTimeout(() => {
-      const favicon = document.getElementById('favicon')
-      favicon.href = this.profile.logo
-    }, 500)
-  }
+  props: ['profile', 'berita']
 }
 </script>
 

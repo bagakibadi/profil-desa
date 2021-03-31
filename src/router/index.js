@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Masuk from '../views/Masuk.vue'
 import Berita from '../views/DetailBerita.vue'
+import Logo from '../views/Logo.vue'
 
 Vue.use(VueRouter)
 
@@ -18,9 +18,9 @@ const routes = [
     component: Berita
   },
   {
-    path: '/masuk',
-    name: 'Masuk',
-    component: Masuk
+    path: '/logo',
+    name: 'Logo',
+    component: Logo
   }
 ]
 

@@ -3,7 +3,7 @@
       <div class="intro-section">
         <div class="overlay-bg"></div>
         <div style="width: 100%" >
-          <video autoplay muted loop id="myVideo" width="100%">
+          <video autoplay playsinline muted loop id="myVideo" width="100%">
             <source :src="profile.header" type="video/mp4" v-if="profile.header">
           </video>
         </div>

@@ -4,6 +4,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  created () {
+    if (this.$workbox) {
+      this.$workbox.addEventListener('waiting', () => {
+        this.showUpdateUI = true
+      })
+    }
+  },
+  method: {
+    async accept () {
+      this.showUpdateUI = false
+      await this.$workbox.messageSW({ type: 'SKIP_WAITING' })
+    }
+  }
+}
+</script>
+
 <style>
 *{
   color: #121212;
